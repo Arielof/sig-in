@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Red: hsl(0, 100%, 74%) 
+- Green: hsl(154, 59%, 51%)
+
+### Accent
+
+- Blue: hsl(248, 32%, 49%)
+
+### Neutral
+
+- Dark Blue: hsl(249, 10%, 26%) 
+- Grayish Blue: hsl(246, 25%, 77%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 500, 600, 700
+*/
+
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --darkBlue: hsl(249, 10%, 26%);
+    --greyBlue: hsl(246, 25%, 77%);
+    --white: hsl(0, 0%, 100%);
+    --borderRadius: 10px;
+    --smBorderRadius: 5px;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--red) url("../images/bg-intro-mobile.png") no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 0 20px;
+    min-height: 100vh;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.title {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 16px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.intro {
+    color: var(--white);
+    margin-bottom: 64px;
+    text-align: center;
+}
+
+.pricing {
+    color: var(--white);
+    background-color: var(--blue);
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: var(--borderRadius);
+    padding: 15px 20%;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.pricing span {
+    font-weight: 700;
+}
+
+.trial-form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: var(--borderRadius);
+    padding: 20px;
+}
+
+.trial-form div {
+    position: relative;
+}
+
+.trial-form input {
+    position: relative;
+    border: 1px solid var(--greyBlue);
+    padding: 20px 15px;
+    border-radius: var(--smBorderRadius);
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.trial-form imput:invalid {
+    border: 1px solid var(--red);
+}
+
+.trial-form input:invalid {
+    background: url(/images/icon-error.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) 15px;
+}
+
+.trial-form div input:focus {
+    outline-color: 1px;
+    outline-color: var(--blue);
+}
+
+.trial-form button {
+    background-color: var(--green);
+    border: none;
+    border-radius: var(--smBorderRadius);
+    padding: 15px;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.trial-form p {
+    font-size: 11px;
+    padding: 8px 40px;
+    color: var(--greyBlue);
+    text-align: center;
+}
+
+.trial-form a {
+    color: var(--red);
+}
+
+footer {
+    margin-top: 100px;
+}
+
+@media(min-width: 640px) {
+    body {
+        background: var(--red) url("../images/bg-intro-desktop.png") no-repeat center center/cover;
+        height: 100vh;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+    }
+    main {
+        max-width: 1111px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 80px;
+    }
+    .title {
+        font-size: 50px;
+        text-align: left;
+        line-height: 55px;
+        margin-bottom: 25px;
+    }
+    .intro {
+        text-align: left;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
